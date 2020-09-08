@@ -523,6 +523,7 @@ export default Backbone.View.extend({
     if (toRequire) {
       stylable =
         !target ||
+        trg.cid === this.getTarget().cid || // EXTENDED: fixed issue when styles didn't work with toRequire field
         (stylableReq &&
           (stylableReq.indexOf(id) >= 0 || stylableReq.indexOf(property) >= 0));
     }
